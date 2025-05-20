@@ -61,3 +61,8 @@ test('Active filter', async ({ page }) => {
   await filterActions.verifyActiveFilter();
 });
 
+test('Completed filter', async ({ page }) => {
+  // Create three to-do elements, apply completed filter and verify the filter
+  await filterActions.completedFilter();
+  await filterActions.verifyCompletedFilter();
+});
