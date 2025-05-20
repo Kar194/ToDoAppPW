@@ -66,3 +66,9 @@ test('Completed filter', async ({ page }) => {
   await filterActions.completedFilter();
   await filterActions.verifyCompletedFilter();
 });
+
+test('Use clear completed button', async ({ page }) => {
+  // Create three to-do elements, mark them as completed, use clear completed button and verify the action
+  await filterActions.useClearCompletedButton();
+  await filterActions.verifyUseClearCompletedButton();
+});
