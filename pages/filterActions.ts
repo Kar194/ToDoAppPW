@@ -18,19 +18,19 @@ constructor(page: Page) {
     this.page = page
     this.crudAction = new CrudActions(page)
     this.markActions = new MarkActions(page)
-    this.activeFilterButton = page.getByText('Active')
+    this.activeFilterButton = page.getByRole('link', { name: 'Active' })
     this.toDoTable = page.getByTestId('todo-title')
-    this.completedFilterButton = page.getByText('Completed')
+    this.completedFilterButton = page.getByRole('link', { name: 'Completed' })
     this.clearCompletedButton = page.getByRole('button', { name: 'Clear completed' })
 }
 
 async activeFilter(){
     this.markActions.createThreeToDoElements()
-    this.activeFilterButton.click()
+    await this.activeFilterButton.click()
 }
 
 async verifyActiveFilter(){
-     await expect(this.toDoTable).toHaveText(['First', 'Second', 'Third']);
+    await expect(this.toDoTable).toHaveText(['First', 'Second', 'Third']);
 }
 
 async completedFilter(){
