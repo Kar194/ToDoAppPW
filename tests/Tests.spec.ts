@@ -30,5 +30,12 @@ test('Delete to-do', async ({ page }) => {
   await crudActions.verifyToDoElementIsDeleted();
 });
 
+test('Edit to-do', async ({ page }) => {
+  // Edit to-do element and verify it was edited
+  await crudActions.editToDoElement();
+  await crudActions
+  .verifyToDoElementIsEdited();
+});
+
 
 
