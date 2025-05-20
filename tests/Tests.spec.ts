@@ -55,4 +55,9 @@ test('Unmark all-to-do', async ({ page }) => {
   await markActions.verifyUnmarkAllToDo();
 });
 
+test('Active filter', async ({ page }) => {
+  // Create three to-do elements, apply active filter and verify the filter
+  await filterActions.activeFilter();
+  await filterActions.verifyActiveFilter();
+});
 
