@@ -49,4 +49,10 @@ test('Mark all-to-do as completed', async ({ page }) => {
   await markActions.verifyMarkAllToDoAsCompleted();
 });
 
+test('Unmark all-to-do', async ({ page }) => {
+  // Mark three to-do elements as completed and then unmark them, verify the unmarking
+  await markActions.unmarkAllToDo();
+  await markActions.verifyUnmarkAllToDo();
+});
+
 
