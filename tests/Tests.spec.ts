@@ -18,4 +18,11 @@ test.beforeEach(async ({ page }) => {
   filterActions = new FilterActions(page)
 });
 
+test('Create to-do', async ({ page }) => {
+  // Create to-do element and verify it
+  await crudActions.createToDoElement();
+  await crudActions.verifyToDoElement();
+});
+
+
 
