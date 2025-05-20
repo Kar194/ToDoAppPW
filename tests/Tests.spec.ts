@@ -37,5 +37,10 @@ test('Edit to-do', async ({ page }) => {
   .verifyToDoElementIsEdited();
 });
 
+test('Mark to-do as completed', async ({ page }) => {
+  // Mark to-do element as completed and verify it was marked
+  await markActions.markToDoAsCompleted();
+  await markActions.verifyToDoIsMarkedAsCompleted();
+});
 
 
