@@ -43,4 +43,10 @@ test('Mark to-do as completed', async ({ page }) => {
   await markActions.verifyToDoIsMarkedAsCompleted();
 });
 
+test('Mark all-to-do as completed', async ({ page }) => {
+  // Mark three to-do elements as completed and verify they were marked as completed
+  await markActions.markAllToDoAsCompleted();
+  await markActions.verifyMarkAllToDoAsCompleted();
+});
+
 
